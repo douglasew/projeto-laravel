@@ -1,0 +1,30 @@
+.container {
+    justify-content: center;
+    display: flex;
+
+    align-items: center;
+
+    height: 100vh;
+    background-color: rgb(235, 235, 235);
+}
+
+form {
+    padding: 40px;
+    border-radius: 5px;
+    height: 525px;
+
+    background-color: white;
+
+    font-family: 'Roboto', sans-serif;
+
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+h2 {
+    padding-bottom: 70px;
+}
+a {
+    text-decoration: none;
+}
+main {
+    width: 560px;
+}

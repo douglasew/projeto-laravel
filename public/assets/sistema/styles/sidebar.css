@@ -1,0 +1,50 @@
+.brand-name-wrapper {
+    text-align: center;
+}
+.navbar-default {
+    background-color: #fff;
+    margin-left: 200px;
+}
+
+.msb {
+    background-color: #f5f7f9;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: auto;
+
+    overflow-y: auto;
+
+    height: 100%;
+    z-index: 1;
+    border-right: 1px solid #ddd;
+}
+.navbar {
+    border: none;
+    margin-left: 0;
+    background-color: inherit;
+}
+.navbar-header {
+    width: 100%;
+
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+.navbar-nav {
+    border: 0 none;
+    box-shadow: none;
+    margin: 0;
+    background: inherit;
+}
+
+a {
+    padding: 15px;
+    color: #5f5f5f;
+}
+
+ul.ns {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}

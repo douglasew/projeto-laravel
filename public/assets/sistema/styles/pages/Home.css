@@ -1,0 +1,30 @@
+.container {
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+h2 {
+    text-align: center;
+}
+
+.prices {
+    padding-top: 100px;
+}
+
+.prices > div {
+    text-align: center;
+    padding: 50px;
+}
+.about {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.imgs {
+    padding-top: 100px;
+}
+footer {
+    padding-top: 50px;
+
+    background-color: white;
+    text-align: center;
+}
