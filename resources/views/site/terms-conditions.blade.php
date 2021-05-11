@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        @include('_shared.site.head')
-    </head>
-    <body data-spy="scroll" data-target=".fixed-top">
-        <!-- Preloader -->
-        <div class="spinner-wrapper">
-            <div class="spinner">
-                <div class="bounce1"></div>
-                <div class="bounce2"></div>
-                <div class="bounce3"></div>
-            </div>
-        </div>
-        <!-- end of preloader -->
-
-        <!-- Navbar -->
-        @include('_shared.site.navigation')
-        <!-- end of navbar -->
-        <!-- end of navbar -->
-
+@extends('_shared.site.template')
         <!-- Header -->
         <header id="header" class="ex-header">
             <div class="container">
@@ -267,16 +247,4 @@
         <!-- end of ex-basic-1 -->
         <!-- end of breadcrumbs -->
 
-        <!-- Footer -->
-        @include('_shared.site.footer')
-        <!-- end of footer -->
-        <!-- end of footer -->
 
-        <!-- Copyright -->
-        @include('_shared.site.copyright')
-        <!-- end of copyright -->
-
-        <!-- Scripts -->
-        @include('_shared.site.scripts')
-    </body>
-</html>
