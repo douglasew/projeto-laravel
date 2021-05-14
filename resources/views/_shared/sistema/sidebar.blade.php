@@ -18,6 +18,9 @@
                 <li>
                     <a href="#">Marcação</a>
                 </li>
+                <li>
+                    <a href="{{route('logout')}}">Logout</a>
+                </li>
             </ul>
         </div>
     </nav>

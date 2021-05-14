@@ -23,14 +23,19 @@ Route::get('/termo_consentimento', function () {
     return view('site.terms-conditions');
 });
 
-Route::get('/login', 'LoginController@login')->name('sistema.login');;
+Route::get('/login', 'LoginController@login')->name('sistema.login');
 Route::post('/logar', 'LoginController@logar')->name('logar');
+Route::get('/logout', 'LoginController@logout')->name('logout');
 
-Route::prefix('/sistema')->group(function () {
-    Route::get('/', 'PacienteController@listar')->name('sistema.listar');
-    Route::get('/cadastro', 'PacienteController@cadastro')->name('sistema.cadastro');
-    Route::post('/cadastrar', 'PacienteController@cadastrar')->name('cadastrar');
-    Route::get('/detalhes/{id}', 'PacienteController@detalhes')->name('sistema.detalhes');
-    Route::get('/editar/{id}', 'PacienteController@editar')->name('sistema.editar');
+Route::middleware(['login'])->group(function () {
     
+    Route::prefix('/sistema')->group(function () {
+        Route::get('/', 'PacienteController@listar')->name('sistema.listar');
+        Route::get('/cadastro', 'PacienteController@cadastro')->name('sistema.cadastro');
+        Route::post('/cadastrar', 'PacienteController@cadastrar')->name('cadastrar');
+        Route::get('/detalhes/{id}', 'PacienteController@detalhes')->name('sistema.detalhes');
+        Route::get('/editar/{id}', 'PacienteController@editar')->name('sistema.editar');
+        
+    });
+
 });
