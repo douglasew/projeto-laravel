@@ -7,6 +7,7 @@
     <body>
         @include('_shared.sistema.sidebar')
         @include('_shared.sistema.nav')
+
         @if($errors->any())
             <div class="alert alert-danger">
                 <strong>Erro!</strong>
@@ -15,6 +16,7 @@
                 @endforeach
             </div>
         @endif
+        
         <div class="container">
             <form class="row g-3" action="{{route('cadastrar')}}" method="post">
                 @csrf 

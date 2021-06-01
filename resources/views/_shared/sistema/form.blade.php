@@ -47,6 +47,7 @@
                         class="form-select"
                         aria-label="Default select example"
                         required
+                        name="sexo"
                     >
                         <option selected>Selecione seu sexo</option>
                         <option value="F">F</option>
@@ -55,8 +56,19 @@
                 </div>
                 <div class="col-md-4">
                     <label class="form-label">Data nascimento</label>
-                    <input type="date" class="form-control" name="data"  />
+                    <input type="date" class="form-control" name="nascimento"  />
                 </div>
+                <div class="col-md-4">
+                    <label class="form-label">RG</label>
+                    <input
+                        type="text"
+                        placeholder="400.000.021-06"
+                        class="form-control"
+                        name="rg"
+                        
+                    />
+                </div>
+                
                 <h2>Endereço</h2>
 
                 <div class="col-md-4">
@@ -80,6 +92,8 @@
                         class="form-control"
                         id="logradouro"
                         for="logradouro"
+                        name="logradouro"
+                        
                     />
                 </div>
                 <div class="col-md-4">
@@ -90,6 +104,7 @@
                         class="form-control"
                         id="bairro"
                         for="bairro"
+                        name="bairro"
                     />
                 </div>
                 <div class="col-md-4">
@@ -100,6 +115,7 @@
                         class="form-control"
                         id="localidade"
                         for="localidade"
+                        name="localidade"
                     />
                 </div>
                 <div class="col-md-1">
@@ -110,6 +126,7 @@
                         class="form-control"
                         id="uf"
                         for="uf"
+                        name="uf"
                     />
                 </div>
                 <div class="form-floating">
@@ -118,5 +135,7 @@
                         placeholder="Leave a comment here"
                         id="floatingTextarea2"
                         style="height: 100px"
+                        name="complemento"
                     ></textarea>
                 </div>
+            
