@@ -2,7 +2,7 @@
 
 Clone repository:
 ```sh
-https://github.com/douglasew/projeto-laravel.git
+git clone https://github.com/douglasew/projeto-laravel.git
 ```
 
 Install dependencies:
