@@ -16,8 +16,6 @@ class LoginMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $response = $next($request);
-
         if(session('email'))
             return $next($request);
         return redirect()->route('sistema.login')->with('erro', 'Login expirado');

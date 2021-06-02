@@ -87,7 +87,7 @@
                 <div class="col-md-4">
                     <label class="form-label">Logradouro</label>
                     <input
-                        disabled
+                        
                         type="text"
                         class="form-control"
                         id="logradouro"
@@ -100,7 +100,7 @@
                     <label class="form-label">Bairro</label>
                     <input
                         type="text"
-                        disabled
+                        
                         class="form-control"
                         id="bairro"
                         for="bairro"
@@ -111,7 +111,7 @@
                     <label class="form-label">Cidade</label>
                     <input
                         type="text"
-                        disabled
+                        
                         class="form-control"
                         id="localidade"
                         for="localidade"
@@ -122,7 +122,7 @@
                     <label class="form-label">UF</label>
                     <input
                         type="text"
-                        disabled
+                        
                         class="form-control"
                         id="uf"
                         for="uf"
@@ -138,4 +138,5 @@
                         name="complemento"
                     ></textarea>
                 </div>
+               
             

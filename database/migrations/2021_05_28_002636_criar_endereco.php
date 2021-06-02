@@ -22,7 +22,7 @@ class CriarEndereco extends Migration
             $table->string('uf');
             $table->string('complemento')->nullable();
             $table->unsignedBigInteger('paciente_id');
-            $table->foreign('paciente_id')->references('id')->on('pacientes');
+            $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
             $table->timestamps();
         });
     }

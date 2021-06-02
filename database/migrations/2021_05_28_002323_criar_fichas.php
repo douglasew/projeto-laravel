@@ -17,7 +17,7 @@ class CriarFichas extends Migration
             $table->id();
             $table->text('ficha');
             $table->unsignedBigInteger('paciente_id');
-            $table->foreign('paciente_id')->references('id')->on('pacientes');
+            $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');;
             $table->timestamps();
         });
     }
