@@ -54,6 +54,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{$pacientes->links('vendor.pagination.bootstrap-4')}}
     </div>
     @include('_shared.sistema.scriptBootstrap')
 </body>

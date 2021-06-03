@@ -10,7 +10,7 @@ class PacienteController extends Controller
     //
     public function listar()
     {
-        $dados["pacientes"] = Paciente::paginate(14)->withQueryString();
+        $dados["pacientes"] = Paciente::paginate(13)->withQueryString();
 
         return view("sistema.listar", $dados);
     }
