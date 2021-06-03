@@ -8,9 +8,16 @@ use Illuminate\Http\Request;
 class PacienteController extends Controller
 {
     //
-    public function listar()
+    public function listar(Request $request)
     {
-        $dados["pacientes"] = Paciente::paginate(13)->withQueryString();
+        if($request->has('nome')){
+            $dados["pacientes"] = Paciente::where('nome', 'like', '%'.$request->nome.'%')->paginate(13)->withQueryString(); 
+        }
+        else{
+            $dados["pacientes"] = Paciente::paginate(13);
+        }
+        
+        $dados['busca'] = $request->nome;
 
         return view("sistema.listar", $dados);
     }
