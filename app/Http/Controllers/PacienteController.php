@@ -4,27 +4,39 @@ namespace App\Http\Controllers;
 use App\Models\Paciente;
 use App\Models\Endereco;
 use Illuminate\Http\Request;
-
+use App\Models\Ficha;
 class PacienteController extends Controller
 {
     //
     public function listar(Request $request)
     {
-        if($request->has('nome')){
-            $dados["pacientes"] = Paciente::where('nome', 'like', '%'.$request->nome.'%')->paginate(13)->withQueryString(); 
-        }
-        else{
+        if ($request->has("nome")) {
+            $dados["pacientes"] = Paciente::where(
+                "nome",
+                "like",
+                "%" . $request->nome . "%",
+            )
+                ->paginate(13)
+                ->withQueryString();
+        } else {
             $dados["pacientes"] = Paciente::paginate(13);
         }
-        
-        $dados['busca'] = $request->nome;
+
+        $dados["busca"] = $request->nome;
 
         return view("sistema.listar", $dados);
+    }
+
+    public function ficha()
+    {
+        return view("sistema.ficha");
     }
 
     public function detalhes(int $id)
     {
         $dados["paciente"] = Paciente::find($id);
+
+        $dados["endereco"] = Endereco::find($id);
 
         return view("sistema.detalhe", $dados);
     }
@@ -52,22 +64,45 @@ class PacienteController extends Controller
             "localidade" => "required",
             "uf" => "required",
         ]);
-           
-        $paciente = Paciente::create($request->only(['nome', 'email','telefone','nascimento','sexo','cpf','rg']));
-       
-        $dados = $request->only(['cep','logradouro','bairro','localidade','uf','complemento']);
-        $dados['paciente_id'] = $paciente->id;
+
+        $paciente = Paciente::create(
+            $request->only([
+                "nome",
+                "email",
+                "telefone",
+                "nascimento",
+                "sexo",
+                "cpf",
+                "rg",
+            ]),
+        );
+
+        $dados = $request->only([
+            "cep",
+            "logradouro",
+            "bairro",
+            "localidade",
+            "uf",
+            "complemento",
+        ]);
+        $dados["paciente_id"] = $paciente->id;
         Endereco::create($dados);
 
         return redirect()
             ->route("sistema.listar")
             ->with("sucesso", "Paciente cadastrado com sucesso");
     }
+    public function edicao(int $id)
+    {
+        $dados["paciente"] = Paciente::find($id);
+
+        $dados["endereco"] = Endereco::find($id);
+
+        return view("sistema.editar", $dados);
+    }
 
     public function editar(Request $request, int $id)
     {
-        $dados["pacientes"] = Paciente::find($id);
-
         $request->validate([
             "nome" => "required",
             "email" => "required|unique:pacientes",
@@ -82,15 +117,40 @@ class PacienteController extends Controller
             "localidade" => "required",
             "uf" => "required",
         ]);
-        
-        Paciente::where('id',$id)->update($request->except('_token'));
-        return redirect()->route('sistema.listar')->with('sucesso','paciente atualizado com sucesso!');
+
+        Paciente::where("id", $id)->update(
+            $request->only([
+                "nome",
+                "email",
+                "telefone",
+                "nascimento",
+                "sexo",
+                "cpf",
+                "rg",
+            ]),
+        );
+        //$dd['paciente_id'] = $paciente->id;
+        Endereco::where("id", $id)->update(
+            $request->only([
+                "cep",
+                "logradouro",
+                "bairro",
+                "localidade",
+                "uf",
+                "complemento",
+            ]),
+        );
+
+        return redirect()
+            ->route("sistema.listar")
+            ->with("sucesso", "paciente atualizado com sucesso!");
     }
 
     public function excluir(int $id)
     {
         Paciente::destroy($id);
-        return redirect()->route('sistemas.listar')->with('sucesso', 'paciente excluído com sucesso!');
+        return redirect()
+            ->route("sistema.listar")
+            ->with("sucesso", "paciente excluído com sucesso!");
     }
-    
 }

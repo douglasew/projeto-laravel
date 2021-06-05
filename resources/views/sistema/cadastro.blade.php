@@ -6,10 +6,9 @@
     </head>
     <body>
         @include('_shared.sistema.sidebar')
-        @include('_shared.sistema.nav')
 
         @if($errors->any())
-            <div class="alert alert-danger">
+            <div class="alert alert-danger container">
                 <strong>Erro!</strong>
                 @foreach($errors->all() as $error)
                     <p>{{$error}}</p>

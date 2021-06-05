@@ -34,7 +34,10 @@ Route::middleware(['login'])->group(function () {
         Route::get('/cadastro', 'PacienteController@cadastro')->name('sistema.cadastro');
         Route::post('/cadastrar', 'PacienteController@cadastrar')->name('cadastrar');
         Route::get('/detalhes/{id}', 'PacienteController@detalhes')->name('sistema.detalhes');
-        Route::get('/editar/{id}', 'PacienteController@editar')->name('sistema.editar');
+        Route::get('/editar/{id}', 'PacienteController@edicao')->name('sistema.edicao');
+        Route::post('/editar/{id}', 'PacienteController@editar')->name('editar');
+        Route::get('/ficha/{id}', 'PacienteController@ficha')->name('sistema.ficha');
+        Route::get('/excluir/{id}', 'PacienteController@excluir')->name('excluir');
         
     });
 

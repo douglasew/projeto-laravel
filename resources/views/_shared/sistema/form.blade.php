@@ -7,6 +7,7 @@
                         placeholder="Maria da silva"
                         class="form-control"
                         name="nome"
+                        value="{{old('nome', $paciente['nome'])}}"
                         
                     />
                 </div>
@@ -17,6 +18,7 @@
                         placeholder="name@example.com"
                         class="form-control"
                         name="email"
+                        value="{{old('email', $paciente['email'])}}"
                         
                     />
                 </div>
@@ -28,6 +30,7 @@
                         pattern="({2}){4}-{4}"
                         class="form-control"
                         name="telefone"
+                        value="{{old('telefone', $paciente['telefone'])}}"
                         
                     />
                 </div>
@@ -38,6 +41,7 @@
                         placeholder="400.000.021-06"
                         class="form-control"
                         name="cpf"
+                        value="{{old('cpf', $paciente['cpf'])}}"
                         
                     />
                 </div>
@@ -48,6 +52,7 @@
                         aria-label="Default select example"
                         required
                         name="sexo"
+                        value="{{old('sexo', $paciente['sexo'])}}"
                     >
                         <option selected>Selecione seu sexo</option>
                         <option value="F">F</option>
@@ -56,7 +61,12 @@
                 </div>
                 <div class="col-md-4">
                     <label class="form-label">Data nascimento</label>
-                    <input type="date" class="form-control" name="nascimento"  />
+                    <input 
+                        type="date" 
+                        class="form-control" 
+                        name="nascimento" 
+                        value="{{old('nascimento', $paciente['nascimento'])}}"
+                    />
                 </div>
                 <div class="col-md-4">
                     <label class="form-label">RG</label>
@@ -65,6 +75,7 @@
                         placeholder="400.000.021-06"
                         class="form-control"
                         name="rg"
+                        value="{{old('rg', $paciente['rg'])}}"
                         
                     />
                 </div>
@@ -82,6 +93,7 @@
                         pattern="{5}-{3}"
                         name="cep"
                         
+                        
                     />
                 </div>
                 <div class="col-md-4">
@@ -94,6 +106,7 @@
                         for="logradouro"
                         name="logradouro"
                         
+                        
                     />
                 </div>
                 <div class="col-md-4">
@@ -105,6 +118,7 @@
                         id="bairro"
                         for="bairro"
                         name="bairro"
+                        
                     />
                 </div>
                 <div class="col-md-4">
@@ -116,6 +130,7 @@
                         id="localidade"
                         for="localidade"
                         name="localidade"
+                        
                     />
                 </div>
                 <div class="col-md-1">
@@ -127,6 +142,7 @@
                         id="uf"
                         for="uf"
                         name="uf"
+                        
                     />
                 </div>
                 <div class="form-floating">
@@ -136,6 +152,7 @@
                         id="floatingTextarea2"
                         style="height: 100px"
                         name="complemento"
+                        
                     ></textarea>
                 </div>
                
