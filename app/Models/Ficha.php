@@ -9,10 +9,10 @@ class Ficha extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['ficha'];
+    protected $guarded = [];
 
     public function pacientes(){
-        return $this->hasOne('App\ModelsPaciente');
+        return $this->hasOne('App\Models\Paciente');
     }
 
 }

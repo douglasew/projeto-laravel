@@ -30,14 +30,27 @@ Route::get('/logout', 'LoginController@logout')->name('logout');
 Route::middleware(['login'])->group(function () {
     
     Route::prefix('/sistema')->group(function () {
+        
+        //Pacientes
+        
         Route::get('/', 'PacienteController@listar')->name('sistema.listar');
         Route::get('/cadastro', 'PacienteController@cadastro')->name('sistema.cadastro');
-        Route::post('/cadastrar', 'PacienteController@cadastrar')->name('cadastrar');
         Route::get('/detalhes/{id}', 'PacienteController@detalhes')->name('sistema.detalhes');
         Route::get('/editar/{id}', 'PacienteController@edicao')->name('sistema.edicao');
+
+        Route::post('/cadastrar', 'PacienteController@cadastrar')->name('cadastrar');
         Route::post('/editar/{id}', 'PacienteController@editar')->name('editar');
-        Route::get('/ficha/{id}', 'PacienteController@ficha')->name('sistema.ficha');
         Route::get('/excluir/{id}', 'PacienteController@excluir')->name('excluir');
+
+        //Agendamnetos
+
+        Route::post('/agendar', 'AgendamentoController@agendar')->name('agendar');
+        Route::get('/agendamentos', 'AgendamentoController@listar')->name('sistema.agendamentos');
+        Route::get('/agendamento', 'AgendamentoController@agendamento')->name('sistema.agendamento');
+        Route::get('/excluir/agendamento{id}', 'AgendamentoController@excluir')->name('agendamento.excluir');
+        
+        Route::get('/ficha/{id}', 'FichaController@ficha')->name('sistema.ficha');
+        //Route::get('/fichaa/{id}', 'FichaController@show')->name('sistema.ficha.detalhes');
         
     });
 

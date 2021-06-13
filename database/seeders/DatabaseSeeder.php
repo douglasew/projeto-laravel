@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Dentista;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+    
+        Dentista::create(['nome'=> 'Felipe Leonardo Gonçalves']);
+        Dentista::create(['nome'=> 'Ayla Cláudia das Neves']);
+        Dentista::create(['nome'=> 'Elias Tomás Nogueira']);
+        Dentista::create(['nome'=> 'Mirella Rebeca Bernardes']);
+        Dentista::create(['nome'=> 'Oliver Isaac Marcelo Farias']);
+        Dentista::create(['nome'=> 'Bianca Rosa Joana Sales']);
+    
     }
 }

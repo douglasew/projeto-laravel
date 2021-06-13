@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Endereco extends Model
+class Dentista extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
-    
-    public function pacientes(){
-        return $this->hasOne('App\Models\Paciente');
+    public function agendamentos(){
+        return $this->hasMany('App\Models\Agendamentos');
     }
 }

@@ -9,14 +9,19 @@
         </div>
         <div class="side-menu-container">
             <ul class="nav navbar-nav">
+                <h2>Paciente</h2>
                 <li>
                     <a href="{{ url('sistema/') }}">Lista</a>
                 </li>
                 <li>
                     <a href="{{ url('sistema/cadastro') }}">Cadastrar</a>
                 </li>
+                <h2>Agendamento</h2>
                 <li>
-                    <a href="#">Marcação</a>
+                    <a href="{{ url('sistema/agendamento') }}">Agendamento</a>
+                </li>
+                <li>
+                    <a href="{{ url('sistema/agendamentos') }}">Agendamentos</a>
                 </li>
                 <li>
                     <a href="{{route('logout')}}">Logout</a>

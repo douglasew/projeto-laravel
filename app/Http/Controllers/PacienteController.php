@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Paciente;
 use App\Models\Endereco;
-use Illuminate\Http\Request;
 use App\Models\Ficha;
+use Illuminate\Http\Request;
 class PacienteController extends Controller
 {
     //
@@ -27,16 +27,13 @@ class PacienteController extends Controller
         return view("sistema.listar", $dados);
     }
 
-    public function ficha()
-    {
-        return view("sistema.ficha");
-    }
-
     public function detalhes(int $id)
-    {
+    {   
+        $paciente = Endereco::find($id);
+        
         $dados["paciente"] = Paciente::find($id);
 
-        $dados["endereco"] = Endereco::find($id);
+        $dados["endereco"] = Endereco::find($paciente->paciente_id);
 
         return view("sistema.detalhe", $dados);
     }
@@ -77,7 +74,7 @@ class PacienteController extends Controller
             ]),
         );
 
-        $dados = $request->only([
+        $dados_endereco = $request->only([
             "cep",
             "logradouro",
             "bairro",
@@ -85,8 +82,18 @@ class PacienteController extends Controller
             "uf",
             "complemento",
         ]);
-        $dados["paciente_id"] = $paciente->id;
-        Endereco::create($dados);
+
+        $dados_endereco["paciente_id"] = $paciente->id;
+
+        Endereco::create($dados_endereco);
+        
+        $dados_ficha = $request->only([
+            "ficha",
+        ]);
+
+        $dados_ficha["paciente_id"] = $paciente->id;
+
+        Ficha::create($dados_ficha);
 
         return redirect()
             ->route("sistema.listar")

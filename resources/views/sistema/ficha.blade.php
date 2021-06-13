@@ -11,12 +11,13 @@
                 <textarea
                     style="resize: none; margin-top: 5%"
                     name="ficha"
+                    value="{{old('ficha', $ficha['ficha'])}}"
                     id=""
                     cols="30"
                     rows="35"
                 >
                 </textarea>
-
+                
                 <a href="{{ url('sistema/') }}">
                     <button type="button" class="btn btn-primary">
                         Voltar

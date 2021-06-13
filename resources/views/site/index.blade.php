@@ -9,7 +9,7 @@
                                 <h1>
                                     <span class="turquoise">Dental System</span
                                     ><br />
-                                    Sistema para clinicas odontológicas
+                                    Sistemas para clinicas odontológicas
                                 </h1>
                                 <p class="p-large">
                                     Não adianta o programa odontológico ser mil
@@ -54,8 +54,7 @@
                         <h2>Serviços de crescimento de negócios</h2>
                         <p class="p-heading p-large">
                             Serviços de crescimento de negócios Atendemos
-                            pequenas e médias empresas em todos os setores
-                            relacionados à tecnologia com serviços de
+                            pequenas e médias clinicas em com serviços de
                             crescimento de alta qualidade que são apresentados
                             abaixo
                         </p>
@@ -720,3 +719,19 @@
             <!-- end of container -->
         </div>
 
+        <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+        </script>
+        <script>
+            (function () {
+                window.onload = function () {
+                    localStorage.removeItem('blipSdkUAccount');
+                    new BlipChat()
+                    .withAppKey('c2lzdGVtYW9kb250b2xvZ2ljbzphY2M2ZDdiMS05MTA1LTRmOWYtOTI5NC0yY2UxZDlkZGVlNWY=')
+                    .withButton({"color":"#2CC3D5","icon":""})
+                    .withCustomCommonUrl('https://chat.blip.ai/')
+                    .build();
+                }
+            })();
+        </script>
+                                        
+                                        
