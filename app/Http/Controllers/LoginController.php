@@ -16,7 +16,7 @@ class LoginController extends Controller
     public function logar(Request $request){
         if ($request->email == "user@user.com" && $request->senha == "123") {
             session(['email' => $request->email ]);
-            return redirect()->route("sistema.listar");
+            return redirect()->route("paciente.listar");
         }
         return redirect()
             ->back()

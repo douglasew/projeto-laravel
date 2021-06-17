@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class AgendamentoController extends Controller
 {
-    //
+    //Listar agendamentos
+
     public function listar(Request $request)
     {
         if ($request->has("nome")) {
@@ -19,7 +20,7 @@ class AgendamentoController extends Controller
                 ->paginate(13)
                 ->withQueryString();
         } else {
-            $dados["agendamentos"] = Agendamento::paginate(13);
+            $dados["agendamentos"] = Agendamento::paginate(12);
         }
 
         $dados["busca"] = $request->nome;
@@ -27,11 +28,15 @@ class AgendamentoController extends Controller
         return view("sistema.lista-agendamentos", $dados);
     }
 
+    // Rota para a tela de agendamento
+
     public function agendamento(){
         $dados['agendamento'] = new Agendamento;
 
         return view('sistema.agendamento', $dados);
     }
+
+    // Agendar uma consulta
 
     public function agendar(Request $request){
         
@@ -46,14 +51,16 @@ class AgendamentoController extends Controller
         
         $agendamento = Agendamento::create($request->all());
 
-        return redirect()->route('sistema.lista-agendamentos')->with('sucesso', 'Agendamento concluído com sucesso');
+        return redirect()->route('agendamento.listar')->with('sucesso', 'Agendamento concluído com sucesso');
     }
+
+    // Excluir um agendamento
 
     public function excluir(int $id)
     {
         Agendamento::destroy($id);
         return redirect()
-            ->route("sistema.lista-agendamentos")
+            ->route("agendamento.listar")
             ->with("sucesso", "paciente excluído com sucesso!");
     }
 }

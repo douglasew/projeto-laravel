@@ -15,7 +15,13 @@ class CriarFichas extends Migration
     {
         Schema::create('fichas', function (Blueprint $table) {
             $table->id();
-            $table->text('ficha');
+            $table->boolean('alergia');
+            $table->boolean('medicacao');
+            $table->boolean('gestante');
+            $table->boolean('doenca');
+            $table->boolean('cirurgia');
+            $table->enum('sangramento',['NORMAL','EXECESSIVO']);
+            $table->boolean('falta_de_ar');
             $table->unsignedBigInteger('paciente_id');
             $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');;
             $table->timestamps();

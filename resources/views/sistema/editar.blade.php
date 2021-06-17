@@ -7,7 +7,7 @@
 <body>
     @include('_shared.sistema.sidebar')
     <div class="container">
-        <form class="row g-3" action="{{route('editar' , ['id' => $paciente['id']])}}"  method="POST">
+        <form class="row g-3" action="{{route('editar' , ['id' => $paciente['id']])}}"  method="POST" enctype="multipart/form-data">
             @csrf
             @include('_shared.sistema.form')
 

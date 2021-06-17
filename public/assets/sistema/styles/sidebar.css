@@ -3,27 +3,34 @@
 }
 .navbar-default {
     background-color: #fff;
-    margin-left: 200px;
 }
-
-.msb {
-    background-color: #f5f7f9;
+.sidebar {
+    width: 270px;
     position: fixed;
-    left: 0;
     top: 0;
-    right: auto;
-
-    overflow-y: auto;
-
-    height: 100%;
-    z-index: 1;
-    border-right: 1px solid #ddd;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #f5f7f9;
+    color: #fff;
+    transition: all 0.3s;
 }
+
 .navbar {
+    padding: 15px 10px;
+    background: #fff;
     border: none;
-    margin-left: 0;
-    background-color: inherit;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 768px) {
+    .sidebar {
+        margin-left: -270px;
+    }
+}
+
 .navbar-header {
     width: 100%;
 
@@ -43,6 +50,10 @@ a {
     color: #5f5f5f;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 h2 {
     font-size: 25px;
     padding: 15px;
@@ -53,4 +64,18 @@ ul.ns {
     position: relative;
     padding: 0;
     list-style: none;
+}
+
+#logout {
+    padding-top: 60vh;
+    text-align: center;
+}
+
+button {
+    width: 100px;
+}
+
+.btn-outline-danger {
+    background-color: #ff3333;
+    color: white;
 }

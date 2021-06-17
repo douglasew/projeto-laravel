@@ -17,11 +17,11 @@
         @endif
         
         <div class="container">
-            <form class="row g-3" action="{{route('cadastrar')}}" method="post">
+            <form class="row g-3" action="{{route('cadastrar')}}" method="post" enctype="multipart/form-data">
                 @csrf 
                 @include('_shared.sistema.form')
 
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
         </div>
 

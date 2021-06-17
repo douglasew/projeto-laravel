@@ -645,7 +645,7 @@
                             </div>
                             <!-- end of image-wrapper -->
                             <p class="p-large">
-                                <strong>Lacy Whitelong</strong>
+                                <strong>Ayla Cláudia</strong>
                             </p>
                             <p class="job-title">Business Developer</p>
 
@@ -664,7 +664,7 @@
                                 />
                             </div>
                             <!-- end of image wrapper -->
-                            <p class="p-large"><strong>Chris Brown</strong></p>
+                            <p class="p-large"><strong>Felipe Leonardo</strong></p>
                             <p class="job-title">Online Marketer</p>
 
                             <!-- end of social-icons -->
@@ -683,7 +683,7 @@
                             </div>
                             <!-- end of image wrapper -->
                             <p class="p-large">
-                                <strong>Sheila Zimerman</strong>
+                                <strong>Mirella Rebeca</strong>
                             </p>
                             <p class="job-title">Software Engineer</p>
 
@@ -703,7 +703,7 @@
                             </div>
                             <!-- end of image wrapper -->
                             <p class="p-large">
-                                <strong>Mary Villalonga</strong>
+                                <strong>Bianca Rosa</strong>
                             </p>
                             <p class="job-title">Product Manager</p>
 
