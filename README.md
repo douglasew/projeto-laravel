@@ -32,7 +32,12 @@ php artisan serve
 Open [http://localhost/8000](http://localhost/example-api/public/api/) to view
 
 ## Layout
-### Listar Pacientes
+### Lista de Pacientes
 ![lista](https://cdn.discordapp.com/attachments/331545069423165440/855170904468619264/Capturar.PNG)
-### Cadastro de Paciente
+### Cadastro de Pacientes
 ![cadastro](https://cdn.discordapp.com/attachments/331545069423165440/855175058045534228/Capturar.PNG)
+### Lista de Agendamentos
+![Lista agendamentos](https://cdn.discordapp.com/attachments/331545069423165440/855284571973353472/Capturar.PNG)
+### Agendamento
+![agendamento](https://cdn.discordapp.com/attachments/331545069423165440/855283386661732373/Capturar.PNG)
+
